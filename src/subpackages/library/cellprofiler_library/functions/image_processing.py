@@ -537,7 +537,7 @@ def gaussian_filter(image, sigma):
     y_data = skimage.filters.gaussian(image, sigma=sigma, channel_axis=channel_axis)
     return y_data
 
-def findmaxima(image, 
+def find_maxima(image, 
                min_distance=1, 
                threshold_abs=None, 
                mask_image=None
