@@ -8,4 +8,4 @@ def findmaxima(image, min_distance=1, threshold_abs=None, mask_image=None):
         min_distance=min_distance,
         threshold_abs=threshold_abs,
         mask_image=mask_image,
-    )
+    ) 

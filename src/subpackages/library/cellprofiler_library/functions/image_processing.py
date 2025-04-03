@@ -550,9 +550,13 @@ def find_maxima(image,
     generating markers for segmentation with the Watershed module.
     '''
 
-    if threshold_abs is None and mask_image is not None: 
-        mask_image = mask_image.astype(bool) #defensive in case what they pass is a segmentation 
-        image[~mask_image] = 0 # mask out regions outside the mask
+    if threshold_abs is None:
+        if mask_image is not None: # else mask_image # 
+            mask_image = mask_image.astype(bool) #defensive in case what they pass is a segmentation 
+            image[~mask_image] = 0 # mask out regions outside the mask
+        
+        else:
+            pass # raise error from original code
 
     # Step 2: Call peak_local_max
     maxima_coords = skimage.feature.peak_local_max(
